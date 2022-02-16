@@ -37,12 +37,12 @@ public class Input {
         this.someInt = integerVar;
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Input scanner = new Input();
         scanner.setVariables(10, 4.6, "yes");
 
         System.out.println(scanner.getDouble(1, 100));
         System.out.println(scanner.yesNo());
         System.out.println(scanner.getInt(1, 100));
-    }
+    }*/
 }
