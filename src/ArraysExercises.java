@@ -9,8 +9,12 @@ public class ArraysExercises {
             this.name = name;
         }
     }
-    static Person addPerson(Person[] person, Person otherDude, String name){
-        otherDude.name = name;
+    static Person[] addPerson(Person[] person, Person otherDude){
+        int arrLength = person.length;
+        Person[] arrPersons = new Person[arrLength + 1];
+        System.arraycopy(person, 0, arrPersons, 0, arrLength);
+        arrPersons[arrLength] = otherDude;
+        return arrPersons;
     }
 
     public static void main(String[] args) {
@@ -23,6 +27,14 @@ public class ArraysExercises {
         for(int i = 0; i < person.length; i++) {
             person[i] = new Person(names[i]);
             System.out.println(person[i].name);
+        }
+
+        System.out.println("------------");
+
+        Person other = new Person("Jason");
+        person = addPerson(person, other);
+        for (Person value : person) {
+            System.out.println(value.name);
         }
     }
 }
