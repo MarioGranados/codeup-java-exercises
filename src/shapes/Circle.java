@@ -14,12 +14,12 @@ public class Circle {
         return 2 * 3.14 * this.radius;
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Circle circle = new Circle(5);
         double area = circle.getArea();
         double circumference = circle.getCircumference();
 
         System.out.println("Area is " + area);
         System.out.println("Circumference is: "  + circumference);
-    }
+    }*/
 }
