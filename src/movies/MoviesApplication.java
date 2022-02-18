@@ -3,20 +3,20 @@ import java.util.Scanner;
 
 public class MoviesApplication {
 
-    public static void displayMovies(Movie[] movie) {
+    static void displayMovies(Movie[] movie) {
         for (Movie value : movie) {
             System.out.println(value.getMovieName() + "--" + value.getCategory());
         }
     }
 
-    static Movie[] filterMovies(String searchInput) {
+    static void filterMovies(String searchInput) {
         Movie[] movie = new Movie[MoviesArray.findAll().length];
         for (int i = 0; i < MoviesArray.findAll().length; i++) {
             if (MoviesArray.findAll()[i].getCategory().equals(searchInput)) {
                 movie[i] = MoviesArray.findAll()[i];
             }
         }
-        return movie;
+        displayMovies(movie);
     }
 
     public static void main(String[] args) {
@@ -32,8 +32,9 @@ public class MoviesApplication {
         System.out.println("Enter your choice");
         Scanner in = new Scanner(System.in);
         int userInput = in.nextInt();
-        Movie[] movie = filterMovies("drama");
-        displayMovies(movie);
+        //Movie[] movie = filterMovies("drama");
+        //displayMovies(movie);
+        Movie[] movie;
 
         switch (userInput) {
             case 0:
@@ -44,20 +45,20 @@ public class MoviesApplication {
                 displayMovies(movie);
                 break;
             case 2:
-                movie = filterMovies("animated");
-                displayMovies(movie);
+                filterMovies("animated");
+                //displayMovies(movie);
                 break;
             case 3:
-                movie = filterMovies("drama");
-                displayMovies(movie);
+                filterMovies("drama");
+                //displayMovies(movie);
                 break;
             case 4:
-                movie = filterMovies("horror");
-                displayMovies(movie);
+                filterMovies("horror");
+                //displayMovies(movie);
                 break;
             case 5:
-                movie = filterMovies("scifi");
-                displayMovies(movie);
+                filterMovies("scifi");
+                //displayMovies(movie);
                 break;
             default:
                 System.out.println("That Selection isn't here");
