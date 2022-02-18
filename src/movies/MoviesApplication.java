@@ -14,9 +14,9 @@ public class MoviesApplication {
         for (int i = 0; i < MoviesArray.findAll().length; i++) {
             if (MoviesArray.findAll()[i].getCategory().equals(searchInput)) {
                 movie[i] = MoviesArray.findAll()[i];
+                System.out.println("movie name: " + movie[i].getMovieName() + "--"  + movie[i].getCategory());
             }
         }
-        displayMovies(movie);
     }
 
     public static void main(String[] args) {
