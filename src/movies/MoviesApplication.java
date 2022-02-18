@@ -1,4 +1,5 @@
 package movies;
+
 import java.util.Scanner;
 
 public class MoviesApplication {
@@ -14,7 +15,7 @@ public class MoviesApplication {
         for (int i = 0; i < MoviesArray.findAll().length; i++) {
             if (MoviesArray.findAll()[i].getCategory().equals(searchInput)) {
                 movie[i] = MoviesArray.findAll()[i];
-                System.out.println("movie name: " + movie[i].getMovieName() + "--"  + movie[i].getCategory());
+                System.out.println("movie name: " + movie[i].getMovieName() + "--" + movie[i].getCategory());
             }
         }
     }
@@ -32,36 +33,30 @@ public class MoviesApplication {
         System.out.println("Enter your choice");
         Scanner in = new Scanner(System.in);
         int userInput = in.nextInt();
-        //Movie[] movie = filterMovies("drama");
-        //displayMovies(movie);
-        Movie[] movie;
-
+        Movie[] movie = MoviesArray.findAll();
         switch (userInput) {
             case 0:
                 System.out.println("good-bye");
                 break;
             case 1:
-                movie = MoviesArray.findAll();
                 displayMovies(movie);
                 break;
             case 2:
                 filterMovies("animated");
-                //displayMovies(movie);
                 break;
             case 3:
                 filterMovies("drama");
-                //displayMovies(movie);
                 break;
             case 4:
                 filterMovies("horror");
-                //displayMovies(movie);
                 break;
             case 5:
                 filterMovies("scifi");
-                //displayMovies(movie);
                 break;
             default:
                 System.out.println("That Selection isn't here");
+
         }
+
     }
 }
