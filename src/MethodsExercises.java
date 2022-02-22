@@ -59,7 +59,6 @@ public class MethodsExercises {
     }
 
 
-
     public static void main(String[] args) {
         System.out.println(addition(2, 2));
         System.out.println(subtraction(2, 2));
@@ -68,8 +67,6 @@ public class MethodsExercises {
         getInteger(11, 10);
         factorials(0, "y");
         diceRoll(10);
-
-
 
     }
 }
