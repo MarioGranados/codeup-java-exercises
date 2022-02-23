@@ -64,9 +64,9 @@ public class Person {
         System.out.println(person2.getName());*/
 
         Person name1 = new Person("Mario", 25,20.0);
-        Person name2 = new Person(); //error here because we have to assign it things first
+        //Person name2 = new Person(); //error here because we have to assign it things first
 
-        name2.setName("john");
+        //name2.setName("john");
 
         System.out.println(name1.getName());
         System.out.println(name1.getAge());

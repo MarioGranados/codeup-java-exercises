@@ -1,6 +1,6 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        int myFavoriteNumber = 7;
+/*        int myFavoriteNumber = 7;
         System.out.println(myFavoriteNumber);
         String myString = "Hello";
         System.out.println(myString);
@@ -11,7 +11,7 @@ public class HelloWorld {
         System.out.println(myNumber);
         System.out.println(fNumber);
 
-        /*next ex*/
+        *//*next ex*//*
         int x = 5;
         System.out.println(x++);
         System.out.println(x);
@@ -20,10 +20,10 @@ public class HelloWorld {
         System.out.println(++x);
         System.out.println(x);
 
-/*        String theNumberThree = "three";
+*//*        String theNumberThree = "three";
         Object o = theNumberThree;
         int three = (int) o;
-        int three = (int) "three";*/
+        int three = (int) "three";*//*
 
         x = 4;
         x += 5;
@@ -41,6 +41,7 @@ public class HelloWorld {
         System.out.println(x + "" + y );
 
         int maxValue = Integer.MAX_VALUE + 1;
-        System.out.println(maxValue);
+        System.out.println(maxValue);*/
     }
 }
+
