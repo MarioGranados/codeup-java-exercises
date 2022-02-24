@@ -33,22 +33,22 @@ public class Map {
 
             //if all bossed are dead set current pos to 6;
         } else if (currentPos == 3) {
-            System.out.println("You Hear a growl...");
+            System.out.println("You heard a growl in the distance...");
         } else if (currentPos == 2) {
-            System.out.println("you hit a wall");
+            System.out.println("There is ruble blocking this pathway...find another way");
         } else if (currentPos == 1) {
-            System.out.println("getting a creepy vibe");
+            System.out.println("There is an erie feeling here...let's keep going");
         }
     }
     public static void checkBounds () {
         if(x < 0) {
             x = 0;
             currentPos = map[x][y];
-            System.out.println("There is a dragon in this room...sneak out quietly");
+            System.out.println("There is a dragon in this room...You went back to the previous room ");
         } else if(y < 0) {
             y = 0;
             currentPos = map[x][y];
-            System.out.println("There is a broken bridge here...go around..");
+            System.out.println("There is a broken bridge here...You found a different path");
         } else if (x == 10) {
             x = 9;
             currentPos = map[x][y];
@@ -56,11 +56,13 @@ public class Map {
         } else if (y == 10) {
             y = 9;
             currentPos = map[x][y];
-            System.out.println("You were hit with an arrow...Run!!!");
+            System.out.println("You were hit with an arrow...You went back to the previous room");
+            //subract hitpoint method here
         }
     }
 
     public static void main(String[] args) {
+        currentPos = map[0][0];
         Scanner in = new Scanner(System.in);
         System.out.println("you woke up in a strange place...");
         System.out.println("you see three weapons on the ground, pick a weapon");
