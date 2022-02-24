@@ -1,9 +1,14 @@
 package shapes;
 
-import org.w3c.dom.css.Rect;
 
-public class Rectangle {
-    protected double length;
+abstract class Rectangle extends Quadrilateral implements Measurable{
+    Rectangle(double length, double width) {
+        super(length, width);
+    }
+}
+
+/*public class Rectangle {
+*//*    protected double length;
     protected double width;
     protected double side;
 
@@ -19,7 +24,7 @@ public class Rectangle {
     }
     public double getPerimeter() {
         return ((length + width) * 2);
-    }
+    }*//*
 
-}
+}*/
 

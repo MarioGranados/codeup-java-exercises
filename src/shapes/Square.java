@@ -1,9 +1,16 @@
 package shapes;
 
-public class Square extends Rectangle{
-/*    public Square(double side) {
+
+abstract class Square extends Quadrilateral {
+
+    Square(double side) {
         super(side, side);
-    }*/
+    }
+}
+/*public class Square extends Rectangle{
+    public Square(double side) {
+        super(side, side);
+    }
 
 
     //Overrided stuff below
@@ -22,4 +29,4 @@ public class Square extends Rectangle{
         System.out.println("overloaded");
         return (2 * this.side);
     }
-}
+}*/

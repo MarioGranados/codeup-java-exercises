@@ -26,7 +26,7 @@ public class HighLow {
         double myNumber = Math.floor(Math.random() * 100);
         int random = (int) myNumber;
         int attempts = 0;
-        attempts = userNumber(-1,random, attempts);
+        attempts = userNumber(-1 ,random, attempts);
         System.out.println("congrats! You guessed it");
         System.out.printf("my number was: %s. it took you %s attempts", random, attempts);
     }
