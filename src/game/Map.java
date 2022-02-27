@@ -24,11 +24,11 @@ public class Map {
         if (currentPos == 5) {
             System.out.println("You just kept walking");
         } else if (currentPos == 4) {
-            if (knight.getHitPoints() != 0) {
+            if (knight.getHitPoints() >= 0) {
                 battle(player, knight);
-            }else if (wiz.getHitPoints() != 0) {
+            }else if (wiz.getHitPoints() >= 0) {
                 battle(player, wiz);
-            }else if (dragon.getHitPoints() != 0) {
+            }else if (dragon.getHitPoints() >= 0) {
                 battle(player, dragon);
             } else {
                 currentPos = -1;
@@ -63,8 +63,14 @@ public class Map {
         }
     }
     public static void battle(Player1 player1, Knight character) {
+        Scanner in = new Scanner(System.in);
+
         System.out.println("you came accross a knight!");
-        while (player1.getHitPoints() != 0 && character.getHitPoints() != 0) {
+       // System.out.println(player1.getHitPoints());
+        //System.out.println(character.getHitPoints());
+        while (player1.getHitPoints() >= 0 && character.getHitPoints() >= 0) {
+            System.out.println("press any key to attack!");
+            in.nextLine();
             System.out.println("you make a move which results in " + player1.getSwordAttack() + " damage");
             character.hitPoints -= player1.swordAttackDamage();
             System.out.println("the enemy makes the next move");
@@ -73,18 +79,23 @@ public class Map {
             System.out.println("health: " + player1.getHitPoints() + " Enemy health: " + character.getHitPoints());
 
         }
-        if(player1.getHitPoints() >= 0) {
+        if(player1.getHitPoints() <= 0) {
             player1.uponDeath();
-        } else if (character.getHitPoints() >= 0) {
+            currentPos = -1;
+        } else if (character.getHitPoints() <= 0) {
             character.uponDeath();
             System.out.println("you catch your breath...then continue on");
-            player1.hitPoints += 10;
+            player1.hitPoints += 30;
         }
     }
 
     public static void battle(Player1 player1, Wizard wiz) {
         System.out.println("A shadow appeared from the knight...holding a flame??");
-        while (player1.getHitPoints() != 0 && wiz.getHitPoints() != 0) {
+        Scanner in = new Scanner(System.in);
+        while (player1.getHitPoints() >= 0 && wiz.getHitPoints() >= 0) {
+            System.out.println("press any key to attack!");
+            in.nextLine();
+
             System.out.println("you make a move which results in " + player1.getSwordAttack() + " damage");
             wiz.hitPoints -= player1.swordAttackDamage();
             System.out.println("The enemy casts a fireball");
@@ -94,18 +105,23 @@ public class Map {
 
             System.out.println("health: " + player1.getHitPoints() + " Enemy health: " + wiz.getHitPoints());
         }
-        if(player1.getHitPoints() >= 0) {
+        if(player1.getHitPoints() <= 0) {
             player1.uponDeath();
-        } else if (wiz.getHitPoints() >= 0) {
+            currentPos = -1;
+        } else if (wiz.getHitPoints() <= 0) {
             wiz.uponDeath();
             System.out.println("You then feel the wizard's energy flow through your blood..");
-            player1.hitPoints += 30;
+            player1.hitPoints += 60;
         }
     }
 
     public static void battle(Player1 player1, Dragon dragon) {
         System.out.println("The growling grows stronger...The Dragon Appears...");
-        while (player1.getHitPoints() != 0 && dragon.getHitPoints() != 0) {
+        Scanner in = new Scanner(System.in);
+        while (player1.getHitPoints() >= 0 && dragon.getHitPoints() >= 0) {
+            System.out.println("press any key to attack!");
+            in.nextLine();
+
             System.out.println("you make a move which results in " + player1.getSwordAttack() + " damage");
             dragon.hitPoints -= player1.swordAttackDamage();
             System.out.println("The enemy casts a fireball");
@@ -115,19 +131,20 @@ public class Map {
 
             System.out.println("health: " + player1.getHitPoints() + " Enemy health: " + dragon.getHitPoints());
         }
-        if(player1.getHitPoints() >= 0) {
+        if(player1.getHitPoints() <= 0) {
             player1.uponDeath();
-        } else if (dragon.getHitPoints() >= 0) {
+            currentPos = -1;
+        } else if (dragon.getHitPoints() <= 0) {
             dragon.uponDeath();
             System.out.println("You then feel the wizard's energy flow through your blood..");
-            player1.hitPoints += 30;
+            player1.hitPoints += 50;
         }
     }
 
     public static void main(String[] args) {
-        Player1 player1 = new Player1("Player1", 150, 5.0);
+        Player1 player1 = new Player1("Player1", 150, 10.0);
         Dragon dragon = new Dragon("Dragon", 200);
-        Knight knight = new Knight("knight", 80, 3.0);
+        Knight knight = new Knight("knight", 80, 8.0);
         Wizard wiz = new Wizard("Wizard", 100);
 
         currentPos = map[0][0];

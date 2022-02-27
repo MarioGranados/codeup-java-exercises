@@ -11,9 +11,9 @@ public class Dragon extends Wizard{
         Random x = new Random();
         random = x.nextInt(10) + 1;
         if(random > 5) {
-            return random + 25;
+            return random + 9;
         } else {
-            return random + 18;
+            return random + 7;
         }
     }
 

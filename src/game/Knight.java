@@ -7,7 +7,9 @@ public class Knight extends Character {
     protected double swordAttack;
 
     protected double swordAttackDamage() {
-        return Math.random() * getSwordAttack();
+        Random x = new Random();
+        random = x.nextInt(10) + 1;
+        return getSwordAttack() + random;
     }
     protected void shieldGuardDefense(double damage) {
         Random x = new Random();
@@ -24,7 +26,7 @@ public class Knight extends Character {
     }
 
     public double getSwordAttack() {
-        return swordAttack;
+        return swordAttack + random;
     }
     public void uponDeath() {
         System.out.println("The Knight tries to attack but collapses and dies...");
