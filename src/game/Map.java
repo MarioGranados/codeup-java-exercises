@@ -201,7 +201,7 @@ public class Map {
                     mapEvents(player1, dragon, wiz, knight);
                     break;
                 default:
-                    System.out.println("You stayed in place!");
+                    System.out.println("You stayed in place! Keep moving");
             }
         }
     }

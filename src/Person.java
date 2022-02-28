@@ -41,27 +41,26 @@ public class Person {
     }
 
     public static void main(String[] args) {
-
 /*        Person person1 = new Person();
         person1.setName("john");
         Person person2 = new Person();
         person2.setName("john");
         System.out.println(person1.getName().equals(person2.getName()));
-        System.out.println(person1 == person2);*/
+        System.out.println(person1 == person2);
 
-/*        Person person1 = new Person();
+        Person person1 = new Person();
         person1.setName("John");
         Person person2 = person1;
-        System.out.println(person1 == person2);*/
+        System.out.println(person1 == person2);
 
-/*        Person person1 = new Person();
+        Person person1 = new Person();
         person1.setName("John");
         Person person2 = person1;
         System.out.println(person1.getName());
         System.out.println(person2.getName());
         person2.setName("Jane");
         System.out.println(person1.getName());
-        System.out.println(person2.getName());*/
+        System.out.println(person2.getName());
 
         Person name1 = new Person("Mario", 25,20.0);
         //Person name2 = new Person(); //error here because we have to assign it things first
@@ -70,6 +69,16 @@ public class Person {
 
         System.out.println(name1.getName());
         System.out.println(name1.getAge());
-        System.out.println(name1.getFavoriteNum());
+        System.out.println(name1.getFavoriteNum());*/
+/*
+        Person person = new Person[3];
+
+        person[0] = new Person("john");
+        person[1] = new Person("Mario");
+        person[2] = new Person("Wario");*/
+
+        Person[] person = {new Person("john"), new Person("Mario"), new Person("Wario")};
+
+        System.out.println(person[2].getName());
     }
 }

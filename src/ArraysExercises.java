@@ -17,8 +17,16 @@ public class ArraysExercises {
         return arrPersons;
     }
 
+    public static int sumArray(int[] arr) {
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5};
+/*        int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
         //Person person = new Person("String");
         Person[] person = new Person[3];
@@ -35,7 +43,9 @@ public class ArraysExercises {
         person = addPerson(person, other);
         for (Person value : person) {
             System.out.println(value.name);
-        }
+        }*/
+        int[] arr = {1,2,3,4};
+        System.out.println(sumArray(arr));
     }
 }
 
