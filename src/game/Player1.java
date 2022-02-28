@@ -10,7 +10,7 @@ public class Player1 extends Knight{
         Random x = new Random();
         random = x.nextInt(10) + 1;
         if (random < 5) {
-            System.out.println("Dodged");
+            System.out.println("You dodged the attack!");
         } else {
             System.out.println("you got hit");
             super.hitPoints -= damage;

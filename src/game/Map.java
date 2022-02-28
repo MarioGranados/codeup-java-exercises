@@ -32,7 +32,7 @@ public class Map {
                 battle(player, dragon);
             } else {
                 currentPos = -1;
-                System.out.println("you found an exit...finally");
+                System.out.println("You found an exit....onto the next challenge");
             }
         } else if (currentPos == 3) {
             System.out.println("You heard a growl in the distance...");
@@ -46,7 +46,7 @@ public class Map {
         if(x < 0) {
             x = 0;
             currentPos = map[x][y];
-            System.out.println("There is a dragon in this room...You went back to the previous room ");
+            System.out.println("There is a giant in this room...You went back to the previous room ");
         } else if(y < 0) {
             y = 0;
             currentPos = map[x][y];
@@ -58,25 +58,26 @@ public class Map {
         } else if (y > 10) {
             y = 9;
             currentPos = map[x][y];
-            System.out.println("You were hit with an arrow...You went back to the previous room");
-            //subract hitpoint method here
+            System.out.println("You were almost hit with an arrow...You went back to the previous room");
         }
     }
     public static void battle(Player1 player1, Knight character) {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("you came accross a knight!");
+        System.out.println("you came across a knight!");
        // System.out.println(player1.getHitPoints());
         //System.out.println(character.getHitPoints());
         while (player1.getHitPoints() >= 0 && character.getHitPoints() >= 0) {
+            System.out.println();
             System.out.println("press any key to attack!");
             in.nextLine();
             System.out.println("you make a move which results in " + player1.getSwordAttack() + " damage");
             character.hitPoints -= player1.swordAttackDamage();
-            System.out.println("the enemy makes the next move");
+            System.out.println("the " + character.getName() +  " makes the next move");
             player1.shieldGuardDefense(character.swordAttackDamage());
 
-            System.out.println("health: " + player1.getHitPoints() + " Enemy health: " + character.getHitPoints());
+            System.out.println();
+            System.out.println("Your Health: " + player1.getHitPoints() + " Enemy health: " + character.getHitPoints());
 
         }
         if(player1.getHitPoints() <= 0) {
@@ -85,23 +86,26 @@ public class Map {
         } else if (character.getHitPoints() <= 0) {
             character.uponDeath();
             System.out.println("you catch your breath...then continue on");
+            System.out.println();
             player1.hitPoints += 30;
         }
     }
 
     public static void battle(Player1 player1, Wizard wiz) {
-        System.out.println("A shadow appeared from the knight...holding a flame??");
+        System.out.println("A shadow appeared from the night...holding a flame??");
         Scanner in = new Scanner(System.in);
         while (player1.getHitPoints() >= 0 && wiz.getHitPoints() >= 0) {
+            System.out.println();
             System.out.println("press any key to attack!");
             in.nextLine();
 
             System.out.println("you make a move which results in " + player1.getSwordAttack() + " damage");
             wiz.hitPoints -= player1.swordAttackDamage();
-            System.out.println("The enemy casts a fireball");
+            System.out.println("The " + wiz.getName() + " casts a fireball");
             player1.shieldGuardDefense(wiz.fireBall());
             System.out.println("The enemy now casts a curse");
             player1.shieldGuardDefense(wiz.curseCasting());
+            System.out.println();
 
             System.out.println("health: " + player1.getHitPoints() + " Enemy health: " + wiz.getHitPoints());
         }
@@ -111,6 +115,7 @@ public class Map {
         } else if (wiz.getHitPoints() <= 0) {
             wiz.uponDeath();
             System.out.println("You then feel the wizard's energy flow through your blood..");
+            System.out.println();
             player1.hitPoints += 60;
         }
     }
@@ -119,15 +124,17 @@ public class Map {
         System.out.println("The growling grows stronger...The Dragon Appears...");
         Scanner in = new Scanner(System.in);
         while (player1.getHitPoints() >= 0 && dragon.getHitPoints() >= 0) {
+            System.out.println();
             System.out.println("press any key to attack!");
             in.nextLine();
 
             System.out.println("you make a move which results in " + player1.getSwordAttack() + " damage");
             dragon.hitPoints -= player1.swordAttackDamage();
-            System.out.println("The enemy casts a fireball");
+            System.out.println("The " + dragon.getName() +  " casts a fireball");
             player1.shieldGuardDefense(dragon.fireBall());
             System.out.println("you make your next move another sword strike dealing " + player1.getSwordAttack() + "damage");
             dragon.shieldGuardDefense(player1.swordAttackDamage());
+            System.out.println();
 
             System.out.println("health: " + player1.getHitPoints() + " Enemy health: " + dragon.getHitPoints());
         }
@@ -136,8 +143,7 @@ public class Map {
             currentPos = -1;
         } else if (dragon.getHitPoints() <= 0) {
             dragon.uponDeath();
-            System.out.println("You then feel the wizard's energy flow through your blood..");
-            player1.hitPoints += 50;
+            System.out.println("you take short rest...everything is silent..you should find your way out");
         }
     }
 
@@ -150,11 +156,14 @@ public class Map {
         currentPos = map[0][0];
         Scanner in = new Scanner(System.in);
         System.out.println("you woke up in a strange place...");
-        System.out.println("you see three weapons on the ground, pick a weapon");
+        System.out.println("hit enter to continue");
+        in.nextLine();
+        System.out.println("You see a sword on the ground, hit enter to pick it up");
+        in.nextLine();
+        System.out.println("you see a shild on the ground, hit enter to pick it up");
+        in.nextLine();
 
-        //user picks weapon
-
-        System.out.println("Let's find a way out");
+        System.out.print("you hear a scream in the distance...maybe you should find a way out..");
 
         System.out.println("Select a key");
         String userInput;
