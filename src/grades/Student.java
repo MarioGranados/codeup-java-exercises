@@ -28,7 +28,7 @@ public class Student {
         return Math.round(average / this.grades.size());
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Student john = new Student("John");
         Student bill = new Student("Bill");
 
@@ -48,5 +48,5 @@ public class Student {
 
         System.out.println(bill.getName() + " Grade average is:");
         System.out.println(bill.getGradeAverage());
-    }
+    }*/
 }
