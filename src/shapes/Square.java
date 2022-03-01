@@ -2,8 +2,8 @@ package shapes;
 
 
 public class Square extends Quadrilateral implements Measurable {
-    public Square(double length) {
-        super(length, length);
+    public Square(double side) {
+        super(side, side);
     }
 
     @Override
