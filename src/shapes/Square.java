@@ -1,10 +1,19 @@
 package shapes;
 
 
-abstract class Square extends Quadrilateral {
+public class Square extends Quadrilateral implements Measurable {
+    public Square(double length) {
+        super(length, length);
+    }
 
-    Square(double side) {
-        super(side, side);
+    @Override
+    public double getLength() {
+        return super.getLength();
+    }
+
+    @Override
+    public double getPerimeter() {
+        return super.getPerimeter();
     }
 }
 /*public class Square extends Rectangle{
