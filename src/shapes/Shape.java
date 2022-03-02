@@ -15,11 +15,7 @@ abstract class Shape {
         return width;
     }
 
-    public void setWidth(double width) {
-        this.width = width;
-    }
+    abstract void setWidth(double width);
 
-    public void setLength(double length) {
-        this.length = length;
-    }
+    abstract void setLength(double length);
 }

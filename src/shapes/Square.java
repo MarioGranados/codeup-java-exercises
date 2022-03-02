@@ -12,6 +12,16 @@ public class Square extends Quadrilateral implements Measurable {
     }
 
     @Override
+    void setWidth(double width) {
+        super.width = width;
+    }
+
+    @Override
+    void setLength(double length) {
+        super.length = length;
+    }
+
+    @Override
     public double getPerimeter() {
         return super.getPerimeter();
     }

@@ -6,9 +6,12 @@ public class ShapesTest {
         Measurable myShape = new Square(4);
         Measurable myOtherShape = new Rectangle(4, 10);
 
+
+        System.out.println("Square:");
         System.out.println(myShape.getArea());
         System.out.println(myShape.getPerimeter());
 
+        System.out.println("Rectangle");
         System.out.println(myOtherShape.getArea());
         System.out.println(myOtherShape.getPerimeter());
 
