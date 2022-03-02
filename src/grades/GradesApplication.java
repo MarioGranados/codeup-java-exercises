@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class GradesApplication {
     public static void main(String[] args) {
-        HashMap<String, Student > students = new HashMap<>();
+/*        HashMap<String, Student > students = new HashMap<>();
 
         Student s1 = new Student("John");
         s1.addGrade(80);
@@ -45,8 +45,25 @@ public class GradesApplication {
             System.out.println("would you like to search for another student?");
             System.out.println("type yes : no");
             userInput = in.nextLine();
-        }
+        }*/
 
+        Scanner in = new Scanner(System.in);
+
+        String userInput = in.nextLine();
+
+        if(userInput.equalsIgnoreCase("yes")) {
+            while(userInput.equalsIgnoreCase("yes")) {
+                System.out.println("enter a new item: ");
+                userInput = in.nextLine();
+
+
+
+                System.out.println("would you like to enter a new item");
+                userInput = in.nextLine();
+            }
+        } else {
+            System.out.println("maybe next time");
+        }
 
     }
 }
