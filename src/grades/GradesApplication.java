@@ -1,5 +1,7 @@
 package grades;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -48,19 +50,33 @@ public class GradesApplication {
         }*/
 
         Scanner in = new Scanner(System.in);
+        System.out.println("would you like to make an list?");
+        System.out.println("yes : no");
 
         String userInput = in.nextLine();
 
         if(userInput.equalsIgnoreCase("yes")) {
+            ArrayList<String> list = new ArrayList<>();
+
             while(userInput.equalsIgnoreCase("yes")) {
                 System.out.println("enter a new item: ");
                 userInput = in.nextLine();
 
+                if(list.contains(userInput)) {
+                    System.out.println("you already have that item");
+                } else {
+                    list.add(userInput);
+                }
 
+                System.out.println("your current list is:");
+                System.out.println(list);
 
                 System.out.println("would you like to enter a new item");
+                System.out.println("yes : no");
                 userInput = in.nextLine();
             }
+            System.out.println("your grocery list is: ");
+            System.out.println(list);
         } else {
             System.out.println("maybe next time");
         }
