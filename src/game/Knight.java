@@ -11,6 +11,12 @@ public class Knight extends Character {
         random = x.nextInt(10) + 1;
         return getSwordAttack() + random;
     }
+
+    protected double shieldBashAttackDamage() {
+        Random x = new Random();
+        random = x.nextInt(10) + 1;
+        return getSwordAttack() + random + 6;
+    }
     protected void shieldGuardDefense(double damage) {
         Random x = new Random();
         random = x.nextInt(10) + 1;
