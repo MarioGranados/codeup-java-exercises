@@ -35,6 +35,8 @@ public class JavaIONotes {
 
         Path dataDirAndFile = Paths.get(directory, fileName);
 
+
+        //creates file if it dones'tn exist
         if(Files.notExists(dataDir)) {
             Files.createDirectories(dataDir);
         }
@@ -46,11 +48,34 @@ public class JavaIONotes {
 
         System.out.println(groceries);
 
+        //re-writes to the list
         Files.write(dataDirAndFile, groceries);
 
-        List<String> cheese = Arrays.asList("cheedar cheese", "Colby Jack");
-
+        List<String> cheese = Arrays.asList("Cheddar Cheese", "Colby Jack");
+        //adds to list
         Files.write(dataDirAndFile, cheese, StandardOpenOption.APPEND);
+
+        List<String> updatedGroceriesList = Files.readAllLines(dataDirAndFile);
+
+        System.out.println(updatedGroceriesList);
+
+        for (int i = 0; i < updatedGroceriesList.size(); i++) {
+            System.out.println(i + 1 + " " + updatedGroceriesList.get(i));
+        }
+
+        List<String> printGroceries = Files.readAllLines(dataDirAndFile);
+
+        List<String> newList = new ArrayList<>();
+
+        for(String line : printGroceries) {
+            if(line.equals("Cheddar Cheese")) {
+                newList.add("Vegan Cheese");
+                continue;
+            }
+            newList.add(line);
+        }
+
+        System.out.println("newList: " + newList);
 
     }
 }

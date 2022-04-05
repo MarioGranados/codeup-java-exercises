@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Bob {
-    public static void main(String[] args){
+    public static void main(String[] args)  {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Hello, My name is Bob. \nAsk me a question, nicely tho.");
@@ -16,5 +16,6 @@ public class Bob {
         } else {
             System.out.println("That's cool");
         }
+
     }
 }

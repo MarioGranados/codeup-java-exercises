@@ -10,7 +10,6 @@ abstract class Shape {
     public double getLength() {
         return length;
     }
-
     public double getWidth() {
         return width;
     }
